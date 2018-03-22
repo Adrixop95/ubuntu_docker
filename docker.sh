@@ -10,27 +10,12 @@ sudo apt-get dist-upgrade -y
 sudo dpkg --configure -a
 sudo apt-get install -f -a
 
-#Add GPG key
+#Set up repo
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-#Add Docker repo to APT sources
+sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-#Update pkgs database
+#Install Docker CE
 sudo apt-get update
-
-#Installing docker pkgs
-sudo apt-get install docker-ce -y
-
-#Check docker status
-sudo systemctl status docker
-sleep 10
-
-#Pull docker Ubuntu image
-docker pull ubuntu
-docker run ubuntu
-
-docker ps -q | grep ""
-
-#Rename container
-docker rename my_container ubuntu_web_apache
+sudo apt-get install docker-ce
