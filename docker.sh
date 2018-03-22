@@ -20,12 +20,6 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get install docker-ce -y
 
-#Execute docker command without sudo
-sudo usermod -aG docker ${USER}
-su - ${USER}
-id -nG
-sudo usermod -aG docker ${USER}
-
 #Install Ubuntu GNU/Linux on Docker Containder
 docker pull ubuntu
 
