@@ -27,7 +27,15 @@ id -nG
 sudo usermod -aG docker ${USER}
 
 #Install Ubuntu GNU/Linux on Docker Containder
-sudo docker pull ubuntu
+docker pull ubuntu
 
 #Start this containder
-sudo docker run ubuntu
+docker run -itd ubuntu
+
+#Get container name
+docker_name="$(docker ps --format "{{.Names}}")"
+echo "${docker_name}"
+
+#Rename container
+docker rename ${docker_name} ubuntu_apache
+
