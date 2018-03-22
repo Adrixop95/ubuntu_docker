@@ -37,5 +37,5 @@ sudo docker rename ${docker_name} ubuntu_apache
 #Execute commands on container (install apache2)
 sudo docker exec ubuntu_apache apt-get update
 sudo docker exec ubuntu_apache apt-get upgrade -y
-sudo docker exec ubuntu_apache apt-get install apache2 -y
+sudo docker exec ubuntu_apache apt-get install apache2 git -y
 sudo docker exec ubuntu_apache /etc/init.d/apache2 restart
