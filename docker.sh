@@ -27,7 +27,7 @@ sudo docker pull ubuntu
 sudo docker run -itd ubuntu
 
 #Get container name
-temp_name="$(docker ps --format "{{.Names}}") | head -1"
+temp_name="$(docker ps --format "{{.Names}}")"
 docker_name=$(sudo echo "${temp_name}" | head -1)
 sudo echo "${docker_name}"
 
