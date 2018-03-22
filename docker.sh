@@ -32,5 +32,5 @@ docker_name=$(sudo echo "${temp_name}" | head -1)
 sudo echo "${docker_name}"
 
 #Rename container
-sudo docker rename "${docker_name} | head -1" ubuntu_apache
+sudo docker rename ${docker_name} ubuntu_apache
 
