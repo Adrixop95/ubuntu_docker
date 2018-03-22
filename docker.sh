@@ -21,15 +21,15 @@ sudo apt-get update
 sudo apt-get install docker-ce -y
 
 #Install Ubuntu GNU/Linux on Docker Containder
-docker pull ubuntu
+sudo docker pull ubuntu
 
 #Start this containder
-docker run -itd ubuntu
+sudo docker run -itd ubuntu
 
 #Get container name
-docker_name="$(docker ps --format "{{.Names}}")"
-echo "${docker_name}"
+sudo docker_name="$(docker ps --format "{{.Names}}")"
+sudo echo "${docker_name}"
 
 #Rename container
-docker rename ${docker_name} ubuntu_apache
+sudo docker rename ${docker_name} ubuntu_apache
 
