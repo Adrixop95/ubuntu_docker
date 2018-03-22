@@ -6,6 +6,8 @@
 #Update OS
 sudo apt-get update
 sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo dpkg --configure -a
 
 #Add GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -22,3 +24,12 @@ sudo apt-get install docker-ce -y
 #Check docker status
 sudo systemctl status docker
 sleep 10
+
+#Pull docker Ubuntu image
+docker pull ubuntu
+docker run ubuntu
+
+docker ps -q | grep ""
+
+#Rename container
+docker rename my_container ubuntu_web_apache
