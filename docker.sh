@@ -27,9 +27,10 @@ sudo docker pull ubuntu
 sudo docker run -itd ubuntu
 
 #Get container name
-docker_name="$(docker ps --format "{{.Names}}")"
+temp_name="$(docker ps --format "{{.Names}}") | head -1"
+docker_name=$(sudo echo "${temp_name}" | head -1)
 sudo echo "${docker_name}"
 
 #Rename container
-sudo docker rename ${docker_name} ubuntu_apache
+sudo docker rename "${docker_name} | head -1" ubuntu_apache
 
