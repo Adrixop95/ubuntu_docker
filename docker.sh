@@ -24,7 +24,7 @@ sudo apt-get install docker-ce -y
 sudo docker pull ubuntu
 
 #Start this containder with port 80 for apache server
-sudo docker run -itd -p 80:80 ubuntu
+sudo docker run -itd -p 80:80 --restart=unless-stopped ubuntu
 
 #Get container name
 temp_name="$(docker ps --format "{{.Names}}")"
