@@ -27,7 +27,7 @@ sudo docker pull ubuntu
 sudo docker run -itd ubuntu
 
 #Get container name
-sudo docker_name="$(docker ps --format "{{.Names}}")"
+docker_name="$(docker ps --format "{{.Names}}")"
 sudo echo "${docker_name}"
 
 #Rename container
