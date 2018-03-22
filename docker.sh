@@ -8,6 +8,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 sudo dpkg --configure -a
+sudo apt-get install -f -a
 
 #Add GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
